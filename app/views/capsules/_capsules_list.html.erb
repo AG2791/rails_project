@@ -1,0 +1,10 @@
+  <ul class="list-group">
+        <li class="list-group-item active text-center">Capsules</li>
+        <% @capsules.each do |capsule| %> 
+          <li class= "list-group-item">
+               <%# <div class ="well">                        %>
+                <label> <%= link_to capsule.name, capsule_path(capsule) %> </label> 
+               <%# </div>  %>
+          </li>
+          <% end %> 
+    </ul>

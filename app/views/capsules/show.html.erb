@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SC</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head> 
+<body>
+<div class="container-fluid text-center">    
+     <div class="row content">
+          <div class="col-sm-3">
+           <section class="capsules">
+               <h1><%= @capsule.name %> </h1> 
+                    <%= link_to "Edit", edit_capsule_path(@capsule) %>
+                    <%= link_to "Delete", capsule_path(@capsule), method: :delete, data: { confirm: "Are you sure you to delete this capsule?" }, class:"button is-danger" %>
+
+                    <%= render :partial => "items/item_form" %>
+               <ul class ='list-group'>
+                    <li class="list-group-item active">Items</li> 
+                    <li class= "list-group-item"> 
+                         <%= render :collection => @capsule.items, :partial => "items/items_list", :as => :item %>  <%#this is a more elegant and refactored version of the next three lines #> %>
+                         <%#= @capsule.items.each do |item| %> 
+                                   <%#= render :partial => "items/items_list", :locals => {:item => item} %>     <%#uses :locals ot let partial kno what "item" variblae inside the partial.%> 
+                              <%# <% end %> 
+                    </li> 
+               </ul>    
+           </section>
+          </div>
+
+          <div class="col-sm-9 sidenav">
+               <%= render :collection => @capsule.items, :partial => "items/item_show", :as => :item %> 
+          </div>
+
+          <footer class="footer">
+          </footer>
+     </div>
+</div>
+</body>
+
+</html>
+
+
+

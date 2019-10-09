@@ -1,0 +1,30 @@
+ 
+      
+           <%# <label> <%= link_to item.name, capsule_item_path(item) %>
+           <%# <li class= "list-group-item"> %>
+             <label> <%= link_to item.name, [item.capsule, item] %> </label> 
+           
+             
+        
+         <%# <%= form_tag(capsule_item_path(item.capsule, item), :method => :delete) do %> 
+            <%##### <input type = "hidden" name="_method" value="DELETE" />  %>
+            <%# <button type="submit" class="destroy"></button> %>
+         <%# </form> %>
+         <%# <% end %>
+          <div form-group>
+          <%= link_to 'Delete', [item.capsule, item],
+          method: :delete, class: "button is-danger", data: { confirm: 'Are you sure you wan to delete this item?' } %> 
+           <%= link_to 'Show', [item.capsule, item] %> 
+            <%= link_to 'Edit', [item.capsule, item] %> 
+
+            
+           <%# </li> %>
+
+
+           <%# <%= link_to "Show",capsule_item_path(@item) %> 
+          
+          <%# <%= link_to "Edit", edit_capsule_item_path(@item) %>  
+               
+
+
+

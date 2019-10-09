@@ -1,0 +1,37 @@
+<%# show each items name, description, and preview attachment %>
+
+<%# 
+ <%= image_tag capsule_item_url.uploads  %>  
+ 
+<%# 
+ <%= image_tag(@item.upload)  %>   
+ <%# show list of images  %>
+ <%# <% (0...@item.uploads.count).each do |upload| %> 
+ <%# <%= image_tag(@item.uploads[upload]) %>  
+ <%# <% end %> 
+ 
+
+ <section class="capsules">
+     <header class="header">
+       <h1> <%= @item.name %>  </h1> 
+        <h3> <%= @item.description %>  </h3> 
+             <%= link_to "Edit", edit_capsule_item_path(@capsule) %>
+              <%= link_to "Delete", capsule_path(@capsule), method: :delete, data: { confirm: "Are you sure you to delete this capsule?" }, class:"button is-danger" %>
+     </header>   
+
+     <%# <div class="content">
+			<%= @item.uploads %>        
+	  <%# </div>  %>
+
+    
+     <% (0...@item.uploads.count).each do |upload| %>
+      <%# Maybe do this in the model. imageMagicK? %> 
+        <div style="width:300px; height:300px;">    
+          <%= image_tag(@item.uploads[upload], style: 'width:100%; height: auto') %> 
+        </div>      
+     <% end %>
+   
+     
+			<footer class="footer">
+			</footer>
+</section>

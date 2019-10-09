@@ -1,0 +1,25 @@
+<%#  <%= form_for(@item, :url =>  capsule_items_path(@capsule)) do |f| %>  
+                               <%#use form_for to attach to instant of an object i.e capsule.%>
+                                <%# "url =>"" overides rails expected top level route "items_path" for capsule_items_path  
+                                  capsule_item is the name of the nested route for items that belong to a particualr capsule (see rake routes)
+                                  @capsule is just the instance of the capsule  %>
+
+<div class="container">
+   <div form-group>
+      <%= form_for([@capsule, @item]) do |f| %>  
+      <%=f.label "Item" %> 
+      <div class= "field" >
+         <%= f.text_field :name, :class => "new-item" , :placeholder => (@item.errors.full_messages_for(:name).first || "New Item name") %>
+      </div>
+      <%=f.label "Descrption" %> 
+      <div class= "field"> 
+         <%= f.text_area :description, :class => "new-item-description" , :placeholder => (@item.errors.full_messages_for(:description).first || "New Item description") %>   <%# creates a text field for the name capsule property, new-capsule is HTML class and name error  %> 
+      </div>
+      <%# <%= f.text_field :description, :class => "new-capsule"   creates a text field for the name capsule property, new-capsule is HTML class  %>
+      <%# <%= form.label :uploads %>         
+      <%= f.file_field :uploads, multiple: true %>             <%# Active storage file upload multiple files %>
+      <div class="actions">
+         <%= f.submit :style => "bt btn-primary" %>     
+      </div>
+      <% end %>
+   </div>

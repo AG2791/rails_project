@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+        <title>SC</title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    
+<body>
+  <div class="container-fluid text-center">    
+    <div class="row content">
+      <div class="col-sm-3 sidenav">
+        <%= render :partial => "capsule_form" %>  
+        <br>
+           <%= render :partial => "capsules_list" %>   
+      </div>
+      <div class="col-sm-8 text-center"> 
+        <h1>Dashboard</h1>
+        <p>Item Image/Video</p>
+        <hr>
+        <h3>Item description</h3> 
+      </div>
+      <div class="col-sm-1 sidenav">
+        <div class=>
+          <p>something or other</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<%# <footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer> %>
+
+</body>
+</html>

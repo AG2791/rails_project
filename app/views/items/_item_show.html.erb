@@ -1,0 +1,20 @@
+
+ <section class="capsules">
+     <header class="header">
+       <h1> <%= @item.name %>  </h1> 
+        <h3> <%= @item.description %>  </h3> 
+             <%# <%= link_to "Edit", edit_capsule_item_path(@item) %> 
+            <%#= render :partial => "items/item_form" %>
+     </header>   
+
+     <%# <div class="content">
+			<%= @item.uploads %>        
+	  <%# </div>  %>
+
+    
+     <% (0...@item.uploads.count).each do |upload| %>
+      <%# Maybe do this in the model. imageMagicK? %> 
+        <div style="width:300px; height:300px;">    
+          <%= image_tag(@item.uploads[upload], style: 'width:100%; height: auto') %> 
+        </div>      
+     <% end %>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SC</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head> 
+
+
+<body>
+
+ 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">SC</a>
+  <button type="button" class="btn btn-outline-info"> <%= link_to "Home", root_path %> </button>
+ <button type="button" class="btn btn-outline-info"> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> 
+ </nav>
+ 
+<%= yield %>
+
+</body>
+
+</html>

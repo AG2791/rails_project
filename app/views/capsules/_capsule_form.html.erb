@@ -1,0 +1,13 @@
+
+ <%= form_for(@capsule) do |f| %>  <%#use form_for to attach to instant of an object i.e capsule.%>
+             <%= f.text_field :name, :class => "new-capsule" , :placeholder => (@capsule.errors.full_messages_for(:name).first || "Add A New Capsule") %>   <%# creates a text field for the name capsule property, new-capsule is HTML class and name error  %> 
+              <%= f.submit :style => "bt btn-primary" %> 
+            <% end %>  
+
+
+
+
+
+
+
+            
